@@ -125,3 +125,7 @@ adr-0002-adopt-zustand-for-state-management.md
 ## ADR の配置場所
 
 プロジェクトルートの `docs/adr/` または `docs/decisions/` に格納することを推奨する。
+
+## Knowledge Base
+
+- [skills/adr-writing.md](../skills/adr-writing.md) — 良いADRを書くための4原則（Atomicity / Decision Point / 議論プロセス / テクニカルライティング）
