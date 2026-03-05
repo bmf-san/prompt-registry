@@ -1,0 +1,10 @@
+# prompt-registry 設定ファイル
+#
+# domains: フロントマターの domain フィールドに指定できる値のリスト。
+# 新しいドメインを追加する場合はここに追記する。
+domains:
+  - architecture
+  - engineering
+  - writing
+  - design
+  - product

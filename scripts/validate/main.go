@@ -12,7 +12,7 @@ import (
 
 // ディレクトリ名 -> 許可される type 値のマッピング
 var dirTypeMap = map[string]string{
-	"agents":    "persona",
+	"personas":  "persona",
 	"skills":    "skill",
 	"reviews":   "review",
 	"artifacts": "artifact",
@@ -26,6 +26,10 @@ var validTypes = map[string]bool{
 }
 
 var frontmatterRe = regexp.MustCompile(`(?s)^---\n(.+?)\n---`)
+
+type Config struct {
+	Domains []string `yaml:"domains"`
+}
 
 type Frontmatter struct {
 	ID     string `yaml:"id"`
@@ -42,10 +46,32 @@ func (e ValidationError) String() string {
 	return fmt.Sprintf("[ERROR] %s: %s", e.FilePath, e.Message)
 }
 
+func loadConfig(root string) (map[string]bool, error) {
+	data, err := os.ReadFile(filepath.Join(root, "config.yaml"))
+	if err != nil {
+		return nil, fmt.Errorf("failed to read config.yaml: %w", err)
+	}
+	var cfg Config
+	if err := yaml.Unmarshal(data, &cfg); err != nil {
+		return nil, fmt.Errorf("failed to parse config.yaml: %w", err)
+	}
+	domains := make(map[string]bool, len(cfg.Domains))
+	for _, d := range cfg.Domains {
+		domains[d] = true
+	}
+	return domains, nil
+}
+
 func main() {
 	root := "."
 	if len(os.Args) > 1 {
 		root = os.Args[1]
+	}
+
+	validDomains, err := loadConfig(root)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "config error: %v\n", err)
+		os.Exit(1)
 	}
 
 	var errors []ValidationError
@@ -65,8 +91,9 @@ func main() {
 				return nil
 			}
 
-			errs := validateFile(path, expectedType)
+			errs := validateFile(path, expectedType, validDomains)
 			errors = append(errors, errs...)
+
 			return nil
 		})
 
@@ -87,7 +114,7 @@ func main() {
 	fmt.Println("All files are valid.")
 }
 
-func validateFile(path, expectedType string) []ValidationError {
+func validateFile(path, expectedType string, validDomains map[string]bool) []ValidationError {
 	var errors []ValidationError
 
 	content, err := os.ReadFile(path)
@@ -124,6 +151,11 @@ func validateFile(path, expectedType string) []ValidationError {
 	// ディレクトリ↔type 対応チェック
 	if fm.Type != "" && validTypes[fm.Type] && fm.Type != expectedType {
 		errors = append(errors, ValidationError{FilePath: path, Message: fmt.Sprintf("type '%s' is not allowed in this directory (expected '%s')", fm.Type, expectedType)})
+	}
+
+	// domain 値チェック
+	if fm.Domain != "" && !validDomains[fm.Domain] {
+		errors = append(errors, ValidationError{FilePath: path, Message: fmt.Sprintf("invalid domain value '%s'", fm.Domain)})
 	}
 
 	// id とファイル名の一致チェック

@@ -1,21 +1,14 @@
 ---
-id: iso25010
+id: non-functional-requirements
 type: skill
 domain: architecture
-tags: [iso25010, quality-model, non-functional-requirements, reliability, security, maintainability, performance]
 sources:
   - https://iso25000.com/index.php/en/iso-25000-standards/iso-25010
 ---
 
-# ISO/IEC 25010 品質特性スキル
+# 非機能要件定義スキル
 
-システム品質の評価フレームワーク「ISO/IEC 25010」に基づく8つの品質特性を定義するスキル。システム設計時の非機能要件の網羅的な検討に使用する。
-
-## 使用するエージェント
-
-- [system-architect](../../agents/system-architect.md)
-
----
+ISO/IEC 25010 の8つの品質特性を軸に、システムの非機能要件を定義・評価・優先順位付けするためのスキル。設計レビューや要件定義時に非機能要件を網羅的に検討する際に使用する。
 
 ## 8つの品質特性
 
@@ -35,7 +28,7 @@ sources:
 | Resource Utilization（リソース使用率） | CPU・メモリ・ディスク・ネットワークの使用は適切か |
 | Capacity（容量） | 最大負荷に対応できるか。スループットは十分か |
 
-**System Architect として特に重視する追加観点（Scalability）:**
+**追加観点（Scalability）:**
 - 水平スケーリング: サーバー追加で対応可能か
 - 垂直スケーリング: リソース増強で対応可能か
 - 負荷分散・キャッシング戦略
@@ -48,8 +41,6 @@ sources:
 | Co-existence（共存性） | 他のシステムと共通環境で動作できるか |
 
 ### 4. Usability（使用性）
-
-※ System Architect としては主にアプリケーション層の観点として参照。
 
 | サブ特性 | 問い |
 |---------|------|
@@ -103,9 +94,9 @@ sources:
 
 ---
 
-## System Architect として追加考慮すべき観点
+## ISO 25010 に含まれない追加観点
 
-ISO 25010 に含まれないが実務上重要:
+実務上重要だが規格に含まれない観点:
 
 | 観点 | 問い |
 |------|------|
