@@ -1,0 +1,49 @@
+name: 新規プロンプト追加リクエスト
+description: 新しいペルソナ・スキル・レビュー観点・成果物テンプレートの追加を依頼する
+labels: ["new-prompt"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: プロンプトの種別
+      description: 追加したいプロンプトの type を選んでください
+      options:
+        - persona（AIに与える役割・ペルソナ定義）
+        - skill（特定領域の評価基準・判断知識）
+        - review（レビュー・承認時のチェックリスト）
+        - artifact（成果物テンプレート）
+    validations:
+      required: true
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: ドメイン
+      description: 最も近いドメインを選んでください（config.yaml の domains を参照）
+      options:
+        - architecture
+        - engineering
+        - writing
+        - design
+        - product
+    validations:
+      required: true
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: ユースケース
+      description: どんな場面で使いたいか、どんな課題を解決したいかを記述してください
+      placeholder: |
+        例: DBマイグレーションのレビュー時に、安全性・後方互換性・パフォーマンスの観点を列挙したチェックリストが欲しい
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: 期待する入出力の例（任意）
+      description: どんな入力を与えて、どんな出力を得たいかのイメージがあれば記述してください
+      placeholder: |
+        入力: DBマイグレーションファイルのコード
+        出力: レビュー観点ごとのチェック結果

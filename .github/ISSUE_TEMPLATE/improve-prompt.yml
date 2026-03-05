@@ -1,0 +1,42 @@
+name: 既存プロンプトの改善提案
+description: 既存のプロンプトファイルに対する問題報告・改善案の提案
+labels: ["improve-prompt"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: 対象ファイル
+      description: 改善したいファイルのパスを記述してください
+      placeholder: personas/engineer.md
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reason
+    attributes:
+      label: 改善理由
+      options:
+        - 出力の品質が期待に達していない
+        - 指示が曖昧・矛盾している
+        - 最新の知識・ルールに追随できていない
+        - WRITING_GUIDE のフォーマットに準拠していない
+        - その他
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題の詳細
+      description: 何が問題か、どんな状況で発生するかを具体的に記述してください
+      placeholder: |
+        例: engineer.md に TypeScript の型安全性に関するガイドラインがなく、
+        型 any の使用を許容してしまう出力が返ってくる
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 改善案（任意）
+      description: 具体的な修正案や追加すべき内容があれば記述してください
