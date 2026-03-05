@@ -15,4 +15,4 @@ jobs:
           go-version-file: go.mod
 
       - name: Run frontmatter validator
-        run: go run ./scripts/validate/
+        run: make validate
