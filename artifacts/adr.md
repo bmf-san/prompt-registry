@@ -2,7 +2,6 @@
 id: adr
 type: artifact
 domain: architecture
-tags: [ADR, architecture-decision-record, documentation, decision-log]
 sources:
   - https://adr.github.io/
   - https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions
