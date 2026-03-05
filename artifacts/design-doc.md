@@ -20,11 +20,6 @@ sources:
 ```markdown
 # {機能名} Design Doc
 
-- **作成者**: {名前}
-- **レビュワー**: {名前}, {名前}
-- **最終更新**: YYYY-MM-DD
-- **ステータス**: Draft | In Review | Approved | Superseded
-
 ## 背景
 
 {なぜこの開発が必要か。ビジネス上の課題・技術的な負債・既存の制約を記述する。}
