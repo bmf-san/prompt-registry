@@ -2,7 +2,6 @@
 id: db-migration
 type: review
 domain: engineering
-tags: [database, migration, schema, backward-compatibility, zero-downtime]
 sources:
   - https://planetscale.com/blog/backward-compatible-database-migrations
   - https://www.braintreepayments.com/blog/safe-operations-for-high-volume-postgresql
