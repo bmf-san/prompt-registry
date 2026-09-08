@@ -22,7 +22,6 @@ prompt-registry/
 
 | skill | 概要 |
 |---|---|
-| [prompt-engineering](skills/prompt-engineering/SKILL.md) | プロンプト設計のフレームワークとパターン |
 | [web-scalability](skills/web-scalability/SKILL.md) | CAP/PACELC・キャッシュ・処理モデル・負荷試験・非機能要件 |
 | [software-design](skills/software-design/SKILL.md) | 凝集度・結合度とアプリ設計レビュー |
 | [technical-review](skills/technical-review/SKILL.md) | コード・設計文書を CTO・アーキテクト視点でレビューする観点と進め方 |
