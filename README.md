@@ -1,68 +1,99 @@
-# prompt-registry
+# engineering-prompts
 
-AIエージェント・プロンプトの分類管理リポジトリ。
-ナレッジをプロンプトに抽象化し、評価・改善を繰り返すための起点。
+ソフトウェアエンジニアリングで利用するAIエージェント向けのスキル。
+
+[Agent Skills](https://agentskills.io) オープン標準に準拠する。1 skill = 1 ディレクトリ + `SKILL.md`。
+
+## 目的
+
+実務で得た知見を skill として言語化し、**判断を効率化する**。調べれば分かる知識を溜める場所ではなく、「どう判断するか」の観点・勘所・型を再利用可能な形にして、評価・改善のサイクルを回す。標準ツールでそのまま使える状態を保つ。
+
+## 何を skill にするか
+
+「調べれば分かる知識」ではなく「実務による判断の知見」を skill にする。
+
+**skill にする**
+
+- 判断・意思決定の型（トレードオフの検討、観点の抜け防止、勘所）
+- 実務・経験から得た暗黙知で、検索や公式ドキュメントでは一次的に得られないもの
+- 繰り返し使うワークフロー・レビュー観点・チェックリスト（属人化を解きたいもの）
+
+**skill にしない**
+
+- 調べれば分かる事実・リファレンス（API 仕様、言語構文、公式ドキュメントの写し）→ 一次ソースへのリンクで足りる
+- 判断を伴わない単なる情報の羅列
+- 一度きり・使い捨ての手順
+
+**迷ったら**: 「検索や公式ドキュメントで代替できるか？」を問う。代替できるならリンクで足り、skill にしない。代替できない「判断の型・観点・勘所」なら skill にする。
+
+## なぜ Agent Skills 標準か
+
+[Agent Skills](https://agentskills.io)（Anthropic が策定したオープン標準）を唯一のスキーマとして採用している。
+
+- **1 skill = 1 ディレクトリ + `SKILL.md`** の単純な単位で、知識・チェックリスト・テンプレートをすべて表現できる。
+- **プログレッシブ・ディスクロージャ**により、メタ情報 → 本体 → 詳細の3段で必要な分だけ読み込め、コンテキスト消費を抑えられる。
+- **ポータビリティ**。Claude Code / claude.ai / Agent SDK など標準対応ツールでそのまま読み込める。
 
 ## ディレクトリ構成
 
 ```
-prompt-registry/
-├── personas/     # ペルソナ（type: persona） — 役割定義・対話フロー
-├── skills/       # スキル（type: skill）     — 再利用可能な知識・技術
-├── reviews/      # レビュー（type: review）  — コードレビュー観点集
-├── artifacts/    # 成果物（type: artifact）  — ドキュメントテンプレート
-├── docs/         # 設計ドキュメント・作成ガイド
-└── scripts/
-    └── validate/ # フロントマター検証スクリプト（Go）
+engineering-prompts/
+├── skills/            # 各 skill を格納
+│   └── <name>/
+│       ├── SKILL.md   # 必須。概要・いつ使うか・判断基準・手順・一次ソース
+│       └── reference/ # 任意。詳細・具体値・テンプレート・チェックリスト
+├── AGENTS.md          # エージェント向けの作業ガイド
+└── README.md
 ```
 
-各ディレクトリ直下にファイルをフラットに配置する（サブディレクトリ不可）。
+## skill 一覧
 
-### 各ディレクトリの役割
+| skill | 概要 |
+|---|---|
+| [technical-review](skills/technical-review/SKILL.md) | コード・設計文書の技術判断をレビューする観点と進め方 |
+| [adr](skills/adr/SKILL.md) | アーキテクチャ決定記録の原則とテンプレート |
+| [requirements-engineering](skills/requirements-engineering/SKILL.md) | 要件と制約の区別・要件レビュー・仕様テンプレート |
+| [architecture-strategy](skills/architecture-strategy/SKILL.md) | アーキテクチャ戦略・戦略レビュー |
+| [organization-design](skills/organization-design/SKILL.md) | チームの価値観（MVV）設計 |
+| [technical-writing](skills/technical-writing/SKILL.md) | 文章・ドキュメントの執筆とレビュー |
 
-| ディレクトリ | type | 説明 |
-|------------|------|------|
-| `personas/` | `persona` | エージェントの役割・ミッション・対話フローを定義する |
-| `skills/` | `skill` | エージェントが参照する再利用可能な技術知識 |
-| `reviews/` | `review` | コードレビュー・設計レビューのチェックリスト |
-| `artifacts/` | `artifact` | ADRや設計書などのドキュメントテンプレート |
+## 規約
 
-## フロントマター仕様
+skill を追加・編集するときの規約。
 
-`personas/` `skills/` `reviews/` `artifacts/` 配下の全 `.md` ファイルには以下の YAML フロントマターが必須。
+### 分類は skill 1種のみ
+
+分類軸は「AI のモード」ではなく「能力・トピック」。役割・チェックリスト・成果物テンプレートも skill として表現する。
+
+- 役割 → その役割が行うワークフローを skill にする
+- チェックリスト → 該当トピック skill の `reference/*.md`
+- 成果物テンプレート → 該当トピック skill の `reference/template.md`
+
+### トピック単位でまとめる
+
+密接に関連する概念は 1 skill に統合し、`reference/` で分割する。細かく割りすぎると、常時コンテキストに載るメタ情報が肥大化する。統合しても `description` に内包トピックをキーワードとして列挙し、自動発火の精度を保つ。
+
+### skill 名の付け方
+
+単一の凝集した概念にする。`A-and-B` のように 2 概念を連結した名前は避ける。連結したくなったら、統合しすぎかトピックの切り出しを誤っているサインとして見直す。
+
+### フロントマター
 
 ```yaml
 ---
-id: {ファイル名（拡張子なし）と一致させる}
-type: persona | skill | review | artifact
-domain: {config.yaml の domains に定義されたいずれかの値}
-sources: []     # 任意（参考URL）
+name: <ディレクトリ名と一致>
+description: <何をする skill か＋いつ使うか。冒頭に主用途、続けてトリガーとなる語>
 ---
 ```
 
-追加できる `domain` の値は `config.yaml` の `domains` リストで管理する。
+- フロントマターは `name` と `description` の 2 つだけ。
+- 出典は本文末尾の「一次ソース」節に置く。
 
-### バリデーションルール
+### SKILL.md の書き方
 
-| ルール | 内容 |
-|--------|------|
-| フロントマター存在 | YAML フロントマターが存在すること |
-| 必須フィールド | `id` / `type` / `domain` が存在すること |
-| `type` 値 | `persona` / `skill` / `review` / `artifact` のいずれかであること |
-| `domain` 値 | `config.yaml` の `domains` に定義された値であること |
-| `id` 一致 | `id` がファイル名（拡張子なし）と一致すること |
-| ディレクトリ対応 | ディレクトリと `type` が対応すること（`personas/` → `persona` など） |
+- 冒頭に概要と「いつ使うか」。続けて判断基準・手順。末尾に「一次ソース」。
+- **500 行以内**を目安とし、詳細・具体値・テンプレート・チェックリストは `reference/*.md` へ逃がす。
+- 手順は「やること」を番号付き、「守ること」を箇条書きで書く。
+- 日本語は直書きする（ユニコードエスケープを使わない）。
 
-## バリデーション（CI）
-
-```bash
-# ローカル実行
-go run ./scripts/validate/ .
-```
-
-プッシュ・プルリクエスト時に GitHub Actions で自動チェックされる。
-
-## ドキュメント
-
-- [DESIGN_DOC.md](docs/DESIGN_DOC.md) — リポジトリ構造の設計背景・方針・決定事項
-- [WRITING_GUIDE.md](docs/WRITING_GUIDE.md) — プロンプト作成規約・コンポーネント・フレームワーク
+標準書式（`name` + `description`）の検証ゲートは持たず、人手・エージェントで守る。エージェント向けの作業手順は [AGENTS.md](AGENTS.md) を参照。

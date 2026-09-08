@@ -1,26 +1,17 @@
 ## 変更内容
 
-<!-- どのファイルを追加・更新・削除したか簡潔に記述 -->
+<!-- どの skill を追加・更新・削除したか簡潔に記述 -->
 
 ## 変更種別
 
-- [ ] 新規ファイル追加
-- [ ] 既存ファイルの更新
-- [ ] ファイル削除
-- [ ] その他（リファクタリング、ドキュメント修正など）
-
-## 対象ファイルの type
-
-- [ ] `persona` — personas/
-- [ ] `skill` — skills/
-- [ ] `review` — reviews/
-- [ ] `artifact` — artifacts/
-- [ ] 対象外（ドキュメント・設定ファイルなど）
+- [ ] 新規 skill 追加
+- [ ] 既存 skill の更新
+- [ ] skill 削除
+- [ ] その他（ドキュメント・設定など）
 
 ## チェックリスト
 
-- [ ] `go run ./scripts/validate/ .` でエラーなし
-- [ ] フロントマターの `id` がファイル名と一致している
-- [ ] `type` と配置ディレクトリが対応している（例: `persona` → `personas/`）
-- [ ] `domain` が `config.yaml` に定義済みの値になっている
-- [ ] **persona を追加・更新した場合**: [WRITING_GUIDE](../docs/WRITING_GUIDE.md) のセクション構成（Task / Input / Output Format / Guidelines / Prohibited Actions / Example / Knowledge Base）に準拠している
+- [ ] skill は `skills/<name>/SKILL.md` に置き、`name` はディレクトリ名と一致している
+- [ ] `description` に「何をするか」と「いつ使うか」を書いた（トリガー語を含む）
+- [ ] SKILL.md は概要・判断基準・手順・一次ソースで構成し、詳細は `reference/` に逃がした
+- [ ] skill 名は単一の凝集した概念で、`A-and-B` の連結になっていない

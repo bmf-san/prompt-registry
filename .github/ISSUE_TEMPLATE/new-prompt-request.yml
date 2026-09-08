@@ -1,31 +1,13 @@
-name: 新規プロンプト追加リクエスト
-description: 新しいペルソナ・スキル・レビュー観点・成果物テンプレートの追加を依頼する
+name: 新規スキル追加リクエスト
+description: 新しい skill の追加を依頼する
 labels: ["new-prompt"]
 body:
-  - type: dropdown
-    id: type
+  - type: input
+    id: skill-name
     attributes:
-      label: プロンプトの種別
-      description: 追加したいプロンプトの type を選んでください
-      options:
-        - persona（AIに与える役割・ペルソナ定義）
-        - skill（特定領域の評価基準・判断知識）
-        - review（レビュー・承認時のチェックリスト）
-        - artifact（成果物テンプレート）
-    validations:
-      required: true
-
-  - type: dropdown
-    id: domain
-    attributes:
-      label: ドメイン
-      description: 最も近いドメインを選んでください（config.yaml の domains を参照）
-      options:
-        - architecture
-        - engineering
-        - writing
-        - design
-        - product
+      label: skill 名の案
+      description: 単一の凝集した概念を表す名前にする。A-and-B のような連結は避ける
+      placeholder: 例: database-reliability
     validations:
       required: true
 
