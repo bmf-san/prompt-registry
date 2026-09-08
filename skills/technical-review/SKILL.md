@@ -37,7 +37,7 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 ### 文脈と整合しているか
 
 - **ドメイン・事業・技術戦略の整合** — 設計の選択が事業戦略・アーキテクチャ戦略と繋がっているか（詳細は `architecture-strategy`）
-- **変更頻度に応じた抽象度の階層化** — 文書の抽象度が変更頻度と釣り合っているか（詳細は `design-documentation`）
+- **変更頻度に応じた抽象度の階層化** — 文書の抽象度が変更頻度と釣り合っているか
 - **組織とアーキテクチャの整合** — アーキテクチャと組織の向かう先が揃っているか（詳細は `organization-design`）
 - **決定の所在** — これは誰が決めるべきことか（記録は `adr`）
 
@@ -60,4 +60,4 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 
 ## 参照
 
-- 各観点の詳細は各ドメインスキルに委ねる: 凝集と結合 → `software-design` / 事業・技術戦略との整合 → `architecture-strategy` / 文書の抽象度・鮮度 → `design-documentation` / 決定の記録 → `adr` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design` / 計測・指標・非機能要件 → `web-scalability`
+- 各観点の詳細は各ドメインスキルに委ねる: 凝集と結合 → `software-design` / 事業・技術戦略との整合 → `architecture-strategy` / 決定の記録 → `adr` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design` / 計測・指標・非機能要件 → `web-scalability`
