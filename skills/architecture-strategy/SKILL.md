@@ -11,6 +11,7 @@ description: アーキテクチャの意思決定を戦略・設計の複数レ�
 
 - アーキテクチャ戦略を策定・評価するとき（良い戦略か悪い戦略かを見分けたいとき）
 - システム設計を進める、またはレビューするとき
+- 戦略・戦術・設計のどの層に書くか迷うとき（書き分けの基準が欲しいとき） → [reference/strategy-tactics-design.md](reference/strategy-tactics-design.md)
 - 戦略のレビューチェックリストが必要なとき → [reference/strategy-review.md](reference/strategy-review.md)
 
 ## 戦略・戦術・設計の3層
@@ -20,7 +21,7 @@ description: アーキテクチャの意思決定を戦略・設計の複数レ�
 | 層 | 問い | 内容 | 詳細 |
 |---|---|---|---|
 | **戦略（Strategy）** | Why & What | なぜその方針が必要か（目的・動機）、何を達成するか（ゴール） | 本 SKILL の評価基準 ＋ [reference/strategy-playbook.md](reference/strategy-playbook.md) |
-| **戦術（Tactics）** | How(大枠) & When/Where/Who | どう実現するか（施策の大枠）、いつ・どこで・誰が実行するか | [reference/strategy-playbook.md](reference/strategy-playbook.md) の施策・実行計画 |
+| **戦術（Tactics）** | How(大枠) & When/Where/Who | どう実現するか（施策の大枠）、いつ・どこで・誰が実行するか | 書き分けは [reference/strategy-tactics-design.md](reference/strategy-tactics-design.md)、施策・実行計画は [reference/strategy-playbook.md](reference/strategy-playbook.md) |
 | **設計（Design）** | How(詳細) | 具体的な技術選定・インターフェース設計・実装方針 | 本 SKILL では扱わない |
 
 **重要な判断基準**: 「手段が前提になっていないか？」を常に問う。「マイクロサービス化する」は戦術・設計であり、戦略ではない。戦略では「なぜマイクロサービス化が必要か」という目的を明確にする。
@@ -111,10 +112,12 @@ What: 機能ドメインごとに境界を設け、独立したデプロイを�
 ## 参照
 
 - [reference/strategy-playbook.md](reference/strategy-playbook.md) — アーキテクチャ戦略の策定手順（ビジネス理解・現状診断・原則・To-Be・ギャップ分析）とアーキテクチャ戦略書の構成
+- [reference/strategy-tactics-design.md](reference/strategy-tactics-design.md) — 戦略・戦術・設計の書き分け（5W1H 基準・よくある混乱パターン・グレーゾーン判断・策定例）
 - [reference/strategy-review.md](reference/strategy-review.md) — アーキテクチャ戦略のレビューチェックリスト
 
 ## 一次ソース
 
 - https://bmf-tech.com/posts/良いアーキテクチャ戦略・悪いアーキテクチャ戦略
+- https://bmf-tech.com/posts/アーキテクチャ戦略・戦術・設計の書き分け
 - https://bmf-tech.com/posts/技術的な意思決定において制約やトレードオフを明示することの重要性
 - https://iso25000.com/index.php/en/iso-25000-standards/iso-25010
