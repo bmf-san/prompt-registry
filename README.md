@@ -26,7 +26,6 @@ prompt-registry/
 | [database-reliability](skills/database-reliability/SKILL.md) | トランザクション・ロック・整合性・インデックス・マイグレーション |
 | [web-scalability](skills/web-scalability/SKILL.md) | CAP/PACELC・キャッシュ・処理モデル・負荷試験・非機能要件 |
 | [software-design](skills/software-design/SKILL.md) | 凝集度・結合度とアプリ設計レビュー |
-| [code-review](skills/code-review/SKILL.md) | 実装・レビュー・デバッグの観点 |
 | [technical-review](skills/technical-review/SKILL.md) | コード・設計文書を CTO・アーキテクト視点でレビューする観点と進め方 |
 | [adr](skills/adr/SKILL.md) | アーキテクチャ決定記録の原則とテンプレート |
 | [design-documentation](skills/design-documentation/SKILL.md) | 設計ドキュメントの書き方・鮮度・レビュー |

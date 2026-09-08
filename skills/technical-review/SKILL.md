@@ -5,7 +5,7 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 
 # 技術レビュー（CTO・アーキテクト視点）
 
-コードと設計文書（Design Doc・ADR・戦略ドキュメント）を CTO・アーキテクト視点でレビューするための観点と進め方。個別実装の良し悪しに閉じず、アーキテクチャ・組織・事業戦略との整合まで見る。属人化しがちなレビュー観点を言語化し、本人以外の人や AI がこの文書だけでレビューしても指摘が大きくズレない状態を目指す。実装レベル（行・関数）のコード品質は `code-review` skill を併用する。
+コードと設計文書（Design Doc・ADR・戦略ドキュメント）を CTO・アーキテクト視点でレビューするための観点と進め方。個別実装の良し悪しに閉じず、アーキテクチャ・組織・事業戦略との整合まで見る。属人化しがちなレビュー観点を言語化し、本人以外の人や AI がこの文書だけでレビューしても指摘が大きくズレない状態を目指す。
 
 ## いつ使うか
 
@@ -60,5 +60,4 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 
 ## 参照
 
-- 実装レベル（行・関数の正確性・可読性・保守性・セキュリティなど）のコードレビューは `code-review` skill
 - 各観点の詳細は各ドメインスキルに委ねる: 凝集と結合 → `software-design` / 事業・技術戦略との整合 → `architecture-strategy` / 文書の抽象度・鮮度 → `design-documentation` / 決定の記録 → `adr` / 不確実性の扱い → `decision-under-uncertainty` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design` / 計測・指標・非機能要件 → `web-scalability`
