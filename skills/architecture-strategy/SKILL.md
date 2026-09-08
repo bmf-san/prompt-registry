@@ -22,7 +22,7 @@ description: アーキテクチャの意思決定を戦略・設計の複数レ�
 |---|---|---|---|
 | **戦略（Strategy）** | Why & What | なぜその方針が必要か（目的・動機）、何を達成するか（ゴール） | 本 SKILL の評価基準 ＋ [reference/strategy-playbook.md](reference/strategy-playbook.md) |
 | **戦術（Tactics）** | How(大枠) & When/Where/Who | どう実現するか（施策の大枠）、いつ・どこで・誰が実行するか | [reference/strategy-playbook.md](reference/strategy-playbook.md) の施策・実行計画 |
-| **設計（Design）** | How(詳細) | 具体的な技術選定・インターフェース設計・実装方針 | [reference/technology-selection.md](reference/technology-selection.md) ／ `software-design` skill |
+| **設計（Design）** | How(詳細) | 具体的な技術選定・インターフェース設計・実装方針 | [reference/technology-selection.md](reference/technology-selection.md) |
 
 **重要な判断基準**: 「手段が前提になっていないか？」を常に問う。「マイクロサービス化する」は戦術・設計であり、戦略ではない。戦略では「なぜマイクロサービス化が必要か」という目的を明確にする。
 

@@ -20,7 +20,7 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 ### 設計そのものは良いか
 
 - **設計対象の境界と責務** — 責務を一言で説明でき、担当範囲の線を引けるか
-- **凝集と結合** — 責務は凝集し、モジュール・サービス間の結合は疎か（詳細は `software-design`）
+- **凝集と結合** — 責務は凝集し、モジュール・サービス間の結合は疎か
 - **データモデルと不変条件** — データモデルはドメイン概念と一致し、不変条件が保たれているか
 - **失敗時のリスクと影響範囲** — 失敗したら何が起き、影響はどこまで及ぶか
 - **後から高くつく運用性** — 後付けが高コストな運用要素が最初から入っているか
@@ -60,4 +60,4 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 
 ## 参照
 
-- 各観点の詳細は各ドメインスキルに委ねる: 凝集と結合 → `software-design` / 事業・技術戦略との整合 → `architecture-strategy` / 決定の記録 → `adr` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design` / 計測・指標・非機能要件 → `web-scalability`
+- 各観点の詳細は各ドメインスキルに委ねる: 事業・技術戦略との整合 → `architecture-strategy` / 決定の記録 → `adr` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design` / 計測・指標・非機能要件 → `web-scalability`
