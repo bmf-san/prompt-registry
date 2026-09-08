@@ -10,8 +10,8 @@ AI エージェント向けスキルのレジストリ。ナレッジを skill �
 prompt-registry/
 ├── skills/            # 各 skill を格納
 │   └── <name>/
-│       ├── SKILL.md   # 必須。概要・いつ使うか・判断基準・手順・一次ソース
-│       └── reference/ # 任意。詳細・具体値・テンプレート・チェックリスト
+│       ├── SKILL.md   # 必須
+│       └── reference/ # 任意
 ├── docs/
 │   └── DESIGN_DOC.md
 ├── AGENTS.md
@@ -37,20 +37,6 @@ prompt-registry/
 | [product-management](skills/product-management/SKILL.md) | 何を・なぜ作るかの明確化 |
 | [product-design](skills/product-design/SKILL.md) | プロダクトの UX/UI 設計 |
 
-## skill の書き方
+## 規約
 
-各 `skills/<name>/SKILL.md` の先頭に YAML フロントマターを置く。
-
-```yaml
----
-name: <ディレクトリ名と一致>
-description: <何をする skill か＋いつ使うか。冒頭に主用途、続けて発火トリガーとなる語>
----
-```
-
-- 分類は skill 1種のみ。役割・チェックリスト・成果物テンプレートもすべて skill として表現する。
-- 密接に関連する概念は1 skill に統合し、詳細は `reference/` へ逃がす（SKILL.md は 500 行以内が目安）。
-- skill 名は単一の凝集した概念にする。`A-and-B` のような連結名は避ける。
-- 出典は本文末尾の「一次ソース」節に書く。
-
-詳しくは [docs/DESIGN_DOC.md](docs/DESIGN_DOC.md) と [AGENTS.md](AGENTS.md) を参照。
+構造・命名・フロントマターの設計と規約は [docs/DESIGN_DOC.md](docs/DESIGN_DOC.md)。skill を追加・編集するエージェント向けの手順は [AGENTS.md](AGENTS.md)。
