@@ -1,68 +1,56 @@
 # prompt-registry
 
-AIエージェント・プロンプトの分類管理リポジトリ。
-ナレッジをプロンプトに抽象化し、評価・改善を繰り返すための起点。
+AI エージェント向けスキルのレジストリ。ナレッジを skill に抽象化し、評価・改善を繰り返すための起点。
+
+[Agent Skills](https://agentskills.io) オープン標準に準拠する。1 skill = 1 ディレクトリ + `SKILL.md`。
 
 ## ディレクトリ構成
 
 ```
 prompt-registry/
-├── personas/     # ペルソナ（type: persona） — 役割定義・対話フロー
-├── skills/       # スキル（type: skill）     — 再利用可能な知識・技術
-├── reviews/      # レビュー（type: review）  — コードレビュー観点集
-├── artifacts/    # 成果物（type: artifact）  — ドキュメントテンプレート
-├── docs/         # 設計ドキュメント・作成ガイド
-└── scripts/
-    └── validate/ # フロントマター検証スクリプト（Go）
+├── skills/            # 各 skill を格納
+│   └── <name>/
+│       ├── SKILL.md   # 必須。概要・いつ使うか・判断基準・手順・一次ソース
+│       └── reference/ # 任意。詳細・具体値・テンプレート・チェックリスト
+├── docs/
+│   └── DESIGN_DOC.md
+├── AGENTS.md
+└── README.md
 ```
 
-各ディレクトリ直下にファイルをフラットに配置する（サブディレクトリ不可）。
+## skill 一覧
 
-### 各ディレクトリの役割
+| skill | 概要 |
+|---|---|
+| [prompt-engineering](skills/prompt-engineering/SKILL.md) | プロンプト設計のフレームワークとパターン |
+| [database-reliability](skills/database-reliability/SKILL.md) | トランザクション・ロック・整合性・インデックス・マイグレーション |
+| [web-scalability](skills/web-scalability/SKILL.md) | CAP/PACELC・キャッシュ・処理モデル・負荷試験・非機能要件 |
+| [software-design](skills/software-design/SKILL.md) | 凝集度・結合度とアプリ設計レビュー |
+| [code-review](skills/code-review/SKILL.md) | 実装・レビュー・デバッグの観点 |
+| [adr](skills/adr/SKILL.md) | アーキテクチャ決定記録の原則とテンプレート |
+| [design-documentation](skills/design-documentation/SKILL.md) | 設計ドキュメントの書き方・鮮度・レビュー |
+| [requirements-engineering](skills/requirements-engineering/SKILL.md) | 要件と制約の区別・要件レビュー・仕様テンプレート |
+| [architecture-strategy](skills/architecture-strategy/SKILL.md) | アーキテクチャ戦略・技術選定・システム設計レビュー |
+| [decision-under-uncertainty](skills/decision-under-uncertainty/SKILL.md) | 不確実性の見極めと見積もり |
+| [organization-design](skills/organization-design/SKILL.md) | チーム構造・MVV・基盤・振り返り |
+| [technical-writing](skills/technical-writing/SKILL.md) | 文章・ドキュメントの執筆とレビュー |
+| [product-management](skills/product-management/SKILL.md) | 何を・なぜ作るかの明確化 |
+| [product-design](skills/product-design/SKILL.md) | プロダクトの UX/UI 設計 |
 
-| ディレクトリ | type | 説明 |
-|------------|------|------|
-| `personas/` | `persona` | エージェントの役割・ミッション・対話フローを定義する |
-| `skills/` | `skill` | エージェントが参照する再利用可能な技術知識 |
-| `reviews/` | `review` | コードレビュー・設計レビューのチェックリスト |
-| `artifacts/` | `artifact` | ADRや設計書などのドキュメントテンプレート |
+## skill の書き方
 
-## フロントマター仕様
-
-`personas/` `skills/` `reviews/` `artifacts/` 配下の全 `.md` ファイルには以下の YAML フロントマターが必須。
+各 `skills/<name>/SKILL.md` の先頭に YAML フロントマターを置く。
 
 ```yaml
 ---
-id: {ファイル名（拡張子なし）と一致させる}
-type: persona | skill | review | artifact
-domain: {config.yaml の domains に定義されたいずれかの値}
-sources: []     # 任意（参考URL）
+name: <ディレクトリ名と一致>
+description: <何をする skill か＋いつ使うか。冒頭に主用途、続けて発火トリガーとなる語>
 ---
 ```
 
-追加できる `domain` の値は `config.yaml` の `domains` リストで管理する。
+- 分類は skill 1種のみ。役割・チェックリスト・成果物テンプレートもすべて skill として表現する。
+- 密接に関連する概念は1 skill に統合し、詳細は `reference/` へ逃がす（SKILL.md は 500 行以内が目安）。
+- skill 名は単一の凝集した概念にする。`A-and-B` のような連結名は避ける。
+- 出典は本文末尾の「一次ソース」節に書く。
 
-### バリデーションルール
-
-| ルール | 内容 |
-|--------|------|
-| フロントマター存在 | YAML フロントマターが存在すること |
-| 必須フィールド | `id` / `type` / `domain` が存在すること |
-| `type` 値 | `persona` / `skill` / `review` / `artifact` のいずれかであること |
-| `domain` 値 | `config.yaml` の `domains` に定義された値であること |
-| `id` 一致 | `id` がファイル名（拡張子なし）と一致すること |
-| ディレクトリ対応 | ディレクトリと `type` が対応すること（`personas/` → `persona` など） |
-
-## バリデーション（CI）
-
-```bash
-# ローカル実行
-go run ./scripts/validate/ .
-```
-
-プッシュ・プルリクエスト時に GitHub Actions で自動チェックされる。
-
-## ドキュメント
-
-- [DESIGN_DOC.md](docs/DESIGN_DOC.md) — リポジトリ構造の設計背景・方針・決定事項
-- [WRITING_GUIDE.md](docs/WRITING_GUIDE.md) — プロンプト作成規約・コンポーネント・フレームワーク
+詳しくは [docs/DESIGN_DOC.md](docs/DESIGN_DOC.md) と [AGENTS.md](AGENTS.md) を参照。
