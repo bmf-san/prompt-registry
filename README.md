@@ -1,6 +1,6 @@
 # engineering-prompts
 
-AI エージェント向けスキルのレジストリ。ナレッジを skill に抽象化し、評価・改善を繰り返すための起点。
+ソフトウェアエンジニアリングで利用するAIエージェント向けのスキル。
 
 [Agent Skills](https://agentskills.io) オープン標準に準拠する。1 skill = 1 ディレクトリ + `SKILL.md`。
 
