@@ -1,6 +1,6 @@
 ---
 name: architecture-strategy
-description: アーキテクチャの意思決定を戦略・システム設計の複数レイヤーで支援するときに使う。良い戦略と悪い戦略の見分け方、制約・トレードオフの明示、技術選定、システム設計の手順とレビュー観点を提供する。トリガー: アーキテクチャ戦略, 技術選定, トレードオフ, 制約, システム設計, システム設計レビュー, To-Be, 設計の賞味期限。
+description: アーキテクチャの意思決定を戦略・システム設計の複数レイヤーで支援するときに使う。良い戦略と悪い戦略の見分け方、制約・トレードオフの明示、技術選定、システム設計の手順とレビュー観点を提供する。トリガー: アーキテクチャ戦略, 技術選定, トレードオフ, 制約, システム設計, システム設計レビュー, To-Be。
 ---
 
 # アーキテクチャ戦略
@@ -109,13 +109,9 @@ What: 機能ドメインごとに境界を設け、独立したデプロイを�
 - この決定によって生じる副作用や技術的負債は何か？
 - チームメンバーは、この意思決定の背景を説明なしに理解できるか？
 
-## 設計の賞味期限を組み込む
-
-戦略・設計には「いつまで持てばよいか」の観点を組み込む。事業（スタートアップ 1〜2年／成熟事業 3〜5年）・組織（属人性・チーム変動）・プロダクト（変化速度）・技術（サポート期限・陳腐化）の4視点で賞味期限を検討すると、過剰設計を避けられる。詳しくは design-documentation skill の reference/design-expiry.md を参照する。
-
 ## 参照
 
-- [reference/strategy-playbook.md](reference/strategy-playbook.md) — アーキテクチャ戦略の策定手順（ビジネス理解・現状診断・賞味期限・原則・To-Be・ギャップ分析）とアーキテクチャ戦略書の構成
+- [reference/strategy-playbook.md](reference/strategy-playbook.md) — アーキテクチャ戦略の策定手順（ビジネス理解・現状診断・原則・To-Be・ギャップ分析）とアーキテクチャ戦略書の構成
 - [reference/system-design-playbook.md](reference/system-design-playbook.md) — システムレベル設計の手順（要件・制約の把握、設計方針の提案、品質観点、アンチパターン、技術選定・比較）
 - [reference/strategy-review.md](reference/strategy-review.md) — アーキテクチャ戦略のレビューチェックリスト
 - [reference/system-design-review.md](reference/system-design-review.md) — システム設計のレビューチェックリスト
