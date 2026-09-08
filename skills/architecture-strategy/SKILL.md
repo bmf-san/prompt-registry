@@ -1,6 +1,6 @@
 ---
 name: architecture-strategy
-description: アーキテクチャの意思決定を戦略・システム設計・アプリケーション設計の3層で支援するときに使う。良い戦略と悪い戦略の見分け方、制約・トレードオフの明示、技術選定、システム設計・アプリ設計の手順とレビュー観点を提供する。トリガー: アーキテクチャ戦略, 技術選定, トレードオフ, 制約, システム設計, システム設計レビュー, To-Be, 設計の賞味期限。
+description: アーキテクチャの意思決定を戦略・システム設計の複数レイヤーで支援するときに使う。良い戦略と悪い戦略の見分け方、制約・トレードオフの明示、技術選定、システム設計の手順とレビュー観点を提供する。トリガー: アーキテクチャ戦略, 技術選定, トレードオフ, 制約, システム設計, システム設計レビュー, To-Be, 設計の賞味期限。
 ---
 
 # アーキテクチャ戦略
@@ -11,7 +11,7 @@ description: アーキテクチャの意思決定を戦略・システム設計�
 
 - アーキテクチャ戦略を策定・評価するとき（良い戦略か悪い戦略かを見分けたいとき）
 - 技術選定・設計判断で、制約とトレードオフを明示して後から再評価できる記録を残したいとき
-- システム設計・アプリケーション設計を進める、またはレビューするとき
+- システム設計を進める、またはレビューするとき
 - 戦略・設計のレビューチェックリストが必要なとき → [reference/strategy-review.md](reference/strategy-review.md) / [reference/system-design-review.md](reference/system-design-review.md)
 
 ## 戦略・戦術・設計の3層
@@ -21,7 +21,7 @@ description: アーキテクチャの意思決定を戦略・システム設計�
 | 層 | 問い | 内容 | 詳細 |
 |---|---|---|---|
 | **戦略（Strategy）** | Why & What | なぜその方針が必要か（目的・動機）、何を達成するか（ゴール） | 本 SKILL の評価基準 ＋ [reference/strategy-playbook.md](reference/strategy-playbook.md) |
-| **戦術（Tactics）** | How(大枠) & When/Where/Who | どう実現するか（施策の大枠）、いつ・どこで・誰が実行するか | [reference/system-design-playbook.md](reference/system-design-playbook.md) / [reference/application-design-playbook.md](reference/application-design-playbook.md) |
+| **戦術（Tactics）** | How(大枠) & When/Where/Who | どう実現するか（施策の大枠）、いつ・どこで・誰が実行するか | [reference/system-design-playbook.md](reference/system-design-playbook.md) |
 | **設計（Design）** | How(詳細) | 具体的な技術選定・インターフェース設計・実装方針 | 同上 |
 
 **重要な判断基準**: 「手段が前提になっていないか？」を常に問う。「マイクロサービス化する」は戦術・設計であり、戦略ではない。戦略では「なぜマイクロサービス化が必要か」という目的を明確にする。
@@ -117,7 +117,6 @@ What: 機能ドメインごとに境界を設け、独立したデプロイを�
 
 - [reference/strategy-playbook.md](reference/strategy-playbook.md) — アーキテクチャ戦略の策定手順（ビジネス理解・現状診断・賞味期限・原則・To-Be・ギャップ分析）とアーキテクチャ戦略書の構成
 - [reference/system-design-playbook.md](reference/system-design-playbook.md) — システムレベル設計の手順（要件・制約の把握、設計方針の提案、品質観点、アンチパターン、技術選定・比較）
-- [reference/application-design-playbook.md](reference/application-design-playbook.md) — アプリケーション設計の手順（アーキテクチャパターン選択、DDD、クラス設計、デザインパターン、モジュール構成、API 設計、コードスメル）
 - [reference/strategy-review.md](reference/strategy-review.md) — アーキテクチャ戦略のレビューチェックリスト
 - [reference/system-design-review.md](reference/system-design-review.md) — システム設計のレビューチェックリスト
 

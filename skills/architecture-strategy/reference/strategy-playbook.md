@@ -122,4 +122,4 @@ Why と What を明確にする。How は含めない。
 
 ## 次のステップ
 
-戦略が固まったら、システム設計（[system-design-playbook.md](system-design-playbook.md)）とアプリケーション設計（[application-design-playbook.md](application-design-playbook.md)）へ具体化を引き継ぐ。策定・レビュー時は [strategy-review.md](strategy-review.md) を使う。
+戦略が固まったら、システム設計（[system-design-playbook.md](system-design-playbook.md)）へ具体化を引き継ぐ。策定・レビュー時は [strategy-review.md](strategy-review.md) を使う。
