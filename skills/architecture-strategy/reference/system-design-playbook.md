@@ -52,7 +52,7 @@
 
 新規システムのインフラ設計、既存システムのリアーキテクト、マイクロサービス vs モノリス判断、システム構成図の作成、DB 選定（RDBMS vs NoSQL）、スケーリング戦略の策定、セキュリティアーキテクチャ設計（認証基盤・暗号化など）、技術スタックの選定、クラウドアーキテクチャ設計、システムアーキテクチャドキュメントの作成。
 
-クラス設計・ドメイン設計・デザインパターン適用といったアプリケーション層の設計は `software-design` skill を参照する。技術の比較・選定は [technology-selection.md](technology-selection.md)、レビュー時は [system-design-review.md](system-design-review.md) を使う。
+クラス設計・ドメイン設計・デザインパターン適用といったアプリケーション層の設計は `software-design` skill を参照する。技術の比較・選定は [technology-selection.md](technology-selection.md) を使う。
 
 ## 参考
 

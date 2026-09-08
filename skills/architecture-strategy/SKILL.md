@@ -12,7 +12,7 @@ description: アーキテクチャの意思決定を戦略・システム設計�
 - アーキテクチャ戦略を策定・評価するとき（良い戦略か悪い戦略かを見分けたいとき）
 - 技術選定・設計判断で、制約とトレードオフを明示して後から再評価できる記録を残したいとき → [reference/technology-selection.md](reference/technology-selection.md)
 - システム設計を進める、またはレビューするとき
-- 戦略・設計のレビューチェックリストが必要なとき → [reference/strategy-review.md](reference/strategy-review.md) / [reference/system-design-review.md](reference/system-design-review.md)
+- 戦略のレビューチェックリストが必要なとき → [reference/strategy-review.md](reference/strategy-review.md)
 
 ## 戦略・戦術・設計の3層
 
@@ -115,7 +115,6 @@ What: 機能ドメインごとに境界を設け、独立したデプロイを�
 - [reference/system-design-playbook.md](reference/system-design-playbook.md) — システムレベル設計の手順（要件・制約の把握、設計方針の提案と詳細化、品質観点）
 - [reference/technology-selection.md](reference/technology-selection.md) — 技術・フレームワークの比較・推奨・記録の手順
 - [reference/strategy-review.md](reference/strategy-review.md) — アーキテクチャ戦略のレビューチェックリスト
-- [reference/system-design-review.md](reference/system-design-review.md) — システム設計のレビューチェックリスト（評価観点を含む）
 
 ## 一次ソース
 
