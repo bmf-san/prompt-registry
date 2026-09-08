@@ -29,10 +29,9 @@ prompt-registry/
 | [adr](skills/adr/SKILL.md) | アーキテクチャ決定記録の原則とテンプレート |
 | [requirements-engineering](skills/requirements-engineering/SKILL.md) | 要件と制約の区別・要件レビュー・仕様テンプレート |
 | [architecture-strategy](skills/architecture-strategy/SKILL.md) | アーキテクチャ戦略・技術選定・システム設計レビュー |
-| [organization-design](skills/organization-design/SKILL.md) | チーム構造・MVV・基盤・振り返り |
+| [organization-design](skills/organization-design/SKILL.md) | チームの価値観（MVV）設計 |
 | [technical-writing](skills/technical-writing/SKILL.md) | 文章・ドキュメントの執筆とレビュー |
 | [product-management](skills/product-management/SKILL.md) | 何を・なぜ作るかの明確化 |
-| [product-design](skills/product-design/SKILL.md) | プロダクトの UX/UI 設計 |
 
 ## 規約
 
