@@ -28,7 +28,7 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 
 ### その判断は確かか
 
-- **現在の不確実性に合った設計** — まだ分からないことを先に決めていないか（詳細は `decision-under-uncertainty`）
+- **現在の不確実性に合った設計** — まだ分からないことを先に決めていないか
 - **コストを含めた実現可能性** — コスト・予算の前提を含めて実現可能か
 - **負債の自覚と返済の見通し** — どんな負債を負い、どう返すか見えているか
 - **検証条件と根拠の質** — 合格基準は判定可能で、根拠は外部の標準にトレースできるか（詳細は `requirements-engineering`）
@@ -60,4 +60,4 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 
 ## 参照
 
-- 各観点の詳細は各ドメインスキルに委ねる: 凝集と結合 → `software-design` / 事業・技術戦略との整合 → `architecture-strategy` / 文書の抽象度・鮮度 → `design-documentation` / 決定の記録 → `adr` / 不確実性の扱い → `decision-under-uncertainty` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design` / 計測・指標・非機能要件 → `web-scalability`
+- 各観点の詳細は各ドメインスキルに委ねる: 凝集と結合 → `software-design` / 事業・技術戦略との整合 → `architecture-strategy` / 文書の抽象度・鮮度 → `design-documentation` / 決定の記録 → `adr` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design` / 計測・指標・非機能要件 → `web-scalability`
