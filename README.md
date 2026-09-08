@@ -22,7 +22,6 @@ prompt-registry/
 
 | skill | 概要 |
 |---|---|
-| [web-scalability](skills/web-scalability/SKILL.md) | CAP/PACELC・キャッシュ・処理モデル・負荷試験・非機能要件 |
 | [technical-review](skills/technical-review/SKILL.md) | コード・設計文書を CTO・アーキテクト視点でレビューする観点と進め方 |
 | [adr](skills/adr/SKILL.md) | アーキテクチャ決定記録の原則とテンプレート |
 | [requirements-engineering](skills/requirements-engineering/SKILL.md) | 要件と制約の区別・要件レビュー・仕様テンプレート |
