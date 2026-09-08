@@ -115,7 +115,7 @@ What: 機能ドメインごとに境界を設け、独立したデプロイを�
 - [reference/system-design-playbook.md](reference/system-design-playbook.md) — システムレベル設計の手順（要件・制約の把握、設計方針の提案と詳細化、品質観点）
 - [reference/technology-selection.md](reference/technology-selection.md) — 技術・フレームワークの比較・推奨・記録の手順
 - [reference/strategy-review.md](reference/strategy-review.md) — アーキテクチャ戦略のレビューチェックリスト
-- [reference/system-design-review.md](reference/system-design-review.md) — システム設計のレビューチェックリスト（評価観点・アンチパターン・改善提案を含む）
+- [reference/system-design-review.md](reference/system-design-review.md) — システム設計のレビューチェックリスト（評価観点を含む）
 
 ## 一次ソース
 
