@@ -10,7 +10,7 @@ description: アーキテクチャの意思決定を戦略・システム設計�
 ## いつ使うか
 
 - アーキテクチャ戦略を策定・評価するとき（良い戦略か悪い戦略かを見分けたいとき）
-- 技術選定・設計判断で、制約とトレードオフを明示して後から再評価できる記録を残したいとき
+- 技術選定・設計判断で、制約とトレードオフを明示して後から再評価できる記録を残したいとき → [reference/technology-selection.md](reference/technology-selection.md)
 - システム設計を進める、またはレビューするとき
 - 戦略・設計のレビューチェックリストが必要なとき → [reference/strategy-review.md](reference/strategy-review.md) / [reference/system-design-review.md](reference/system-design-review.md)
 
@@ -112,9 +112,10 @@ What: 機能ドメインごとに境界を設け、独立したデプロイを�
 ## 参照
 
 - [reference/strategy-playbook.md](reference/strategy-playbook.md) — アーキテクチャ戦略の策定手順（ビジネス理解・現状診断・原則・To-Be・ギャップ分析）とアーキテクチャ戦略書の構成
-- [reference/system-design-playbook.md](reference/system-design-playbook.md) — システムレベル設計の手順（要件・制約の把握、設計方針の提案、品質観点、アンチパターン、技術選定・比較）
+- [reference/system-design-playbook.md](reference/system-design-playbook.md) — システムレベル設計の手順（要件・制約の把握、設計方針の提案と詳細化、品質観点）
+- [reference/technology-selection.md](reference/technology-selection.md) — 技術・フレームワークの比較・推奨・記録の手順
 - [reference/strategy-review.md](reference/strategy-review.md) — アーキテクチャ戦略のレビューチェックリスト
-- [reference/system-design-review.md](reference/system-design-review.md) — システム設計のレビューチェックリスト
+- [reference/system-design-review.md](reference/system-design-review.md) — システム設計のレビューチェックリスト（評価観点・アンチパターン・改善提案を含む）
 
 ## 一次ソース
 
