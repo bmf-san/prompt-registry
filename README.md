@@ -31,7 +31,6 @@ prompt-registry/
 | [architecture-strategy](skills/architecture-strategy/SKILL.md) | アーキテクチャ戦略・技術選定・システム設計レビュー |
 | [organization-design](skills/organization-design/SKILL.md) | チームの価値観（MVV）設計 |
 | [technical-writing](skills/technical-writing/SKILL.md) | 文章・ドキュメントの執筆とレビュー |
-| [product-management](skills/product-management/SKILL.md) | 何を・なぜ作るかの明確化 |
 
 ## 規約
 
