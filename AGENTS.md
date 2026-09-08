@@ -8,6 +8,6 @@ engineering-prompts は、AI エージェント向けの skill を管理する�
 
 ## 規約
 
-skill の構造・命名・フロントマター・書き方・検証方針など、作成と編集の規約はすべて [docs/DESIGN_DOC.md](docs/DESIGN_DOC.md) に集約しています。skill を追加・編集する前に必ず参照してください。
+skill の構造・命名・フロントマター・書き方など、作成と編集の規約は [README.md](README.md) の「規約」節に集約しています。skill を追加・編集する前に必ず参照してください。
 
 skill 一覧は [README.md](README.md) を参照。
