@@ -1,10 +1,10 @@
-# AGENTS.md — prompt-registry
+# AGENTS.md — engineering-prompts
 
 AI エージェントがこのリポジトリで作業する際のガイダンスです。
 
 ## リポジトリ概要
 
-prompt-registry は、AI エージェント向けの skill を管理するレジストリです。[Agent Skills](https://agentskills.io) オープン標準に準拠します。1 skill = 1 ディレクトリ + `skills/<name>/SKILL.md`（+ 任意の `reference/`）。
+engineering-prompts は、AI エージェント向けの skill を管理するレジストリです。[Agent Skills](https://agentskills.io) オープン標準に準拠します。1 skill = 1 ディレクトリ + `skills/<name>/SKILL.md`（+ 任意の `reference/`）。
 
 ## 規約
 

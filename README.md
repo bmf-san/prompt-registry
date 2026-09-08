@@ -1,4 +1,4 @@
-# prompt-registry
+# engineering-prompts
 
 AI エージェント向けスキルのレジストリ。ナレッジを skill に抽象化し、評価・改善を繰り返すための起点。
 
@@ -7,7 +7,7 @@ AI エージェント向けスキルのレジストリ。ナレッジを skill �
 ## ディレクトリ構成
 
 ```
-prompt-registry/
+engineering-prompts/
 ├── skills/            # 各 skill を格納
 │   └── <name>/
 │       ├── SKILL.md   # 必須

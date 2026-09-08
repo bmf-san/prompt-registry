@@ -1,4 +1,4 @@
-# Design Doc: prompt-registry 構造設計
+# Design Doc: engineering-prompts 構造設計
 
 ## 目的
 
@@ -61,7 +61,7 @@ description: <何をする skill か＋いつ使うか。冒頭に主用途、�
 ## ディレクトリ構成
 
 ```
-prompt-registry/
+engineering-prompts/
 ├── AGENTS.md
 ├── README.md
 ├── docs/
