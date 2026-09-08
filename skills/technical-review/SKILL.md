@@ -60,4 +60,4 @@ description: コードと設計文書（Design Doc・ADR・戦略ドキュメン
 
 ## 参照
 
-- 各観点の詳細は各ドメインスキルに委ねる: 事業・技術戦略との整合 → `architecture-strategy` / 決定の記録 → `adr` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design`
+- 一部の観点は詳細を各ドメインスキルに委ねる: 事業・技術戦略との整合 → `architecture-strategy` / 決定の記録 → `adr` / 検証条件・要件 → `requirements-engineering` / 組織との整合 → `organization-design`
